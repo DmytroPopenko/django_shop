@@ -1,4 +1,10 @@
 
+.idea
+/venv/
+
 /TShop/db.sqlite3
 /TShop/TShop/__pycache__/
-.idea
+/TShop/main/__pycache__/
+/TShop/main/migrations/__pycache__/
+
+
