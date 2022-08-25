@@ -4,7 +4,24 @@
     Home
 {% endblock %}
 
+
+
 {% block main_content %}
-    <h1>Main test</h1>
-    {{ prod_list }}
+    <div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom">Products</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        {% for item in prod_list %}
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAStJREFUSEvtle1NxDAMhp9OcDABxwTABMAGbMDdCGzABrABMAFsAGwAE8BtwE0AeiUnivLdov6rpUqt6/ixHccZmFmGmf3TA7gAroFTexTThz1PwFstyBpADu8AAWoiwI0BE7sSQM5fgYPOEv4AlzlIDjDWuYshC8kBlPJ5Z+SxmdYqEy8xQPVWaf4jAviNjwGP1jEO8A5s7EP/XGYlvUzVWW5N0qZqv5Mg/GPg277XwJe9l/Suhc+cjziD36g2h4A2TxICSvrEbwugWm5t1UNwJkr60YCpm+0Db2WwAJI2jbtoKVHzJE8pkcaIv0PiNr0CnjNe98Aq0ud0MqkOOxkIcmszaWfvOrkvwZz6NDtFKtsjQJHfm11xXLdKonkkcQOwZd916Ted1Az+AFJCPRnJZ5ZBAAAAAElFTkSuQmCC"/>
+            </div>
+            <div>
+              <h4>{{ item.title }}</h4>
+              <p>{{ item.description }}</p>
+              <a href="{{ item.slug }}/" class="btn btn-primary">{{ item.price }}</a>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+  </div>
 {% endblock %}

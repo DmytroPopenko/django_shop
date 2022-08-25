@@ -8,6 +8,7 @@ class Products(models.Model):
     price = models.FloatField(default=0.0)
     description = models.TextField(default="Sorry, no description yet.")
     stock = models.IntegerField(default=0)
+    slug = models.CharField(max_length=255, default="")
 
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
