@@ -18,7 +18,7 @@
             <div>
               <h4>{{ item.title }}</h4>
               <p>{{ item.description }}</p>
-              <a href="{{ item.slug }}/" class="btn btn-primary">{{ item.price }}</a>
+              <a href="{% url 'product' item.slug %}" class="btn btn-primary">{{ item.price }}</a>
             </div>
           </div>
         {% endfor %}

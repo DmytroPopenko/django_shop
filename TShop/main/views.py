@@ -13,3 +13,10 @@ def index(request):
 
 def categories(request):
     return render(request, 'main/categories.html')
+
+
+def product_view(request, slug):
+    context = {
+        'product_obj': "Товар №..."
+    }
+    return render(request, 'main/product_temp.html', context=context)
