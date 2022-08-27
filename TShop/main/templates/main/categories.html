@@ -6,4 +6,9 @@
 
 {% block main_content %}
     <h1>Categories</h1>
+    <ul>
+        {% for cat in cat_list %}
+        <li><a href="#">{{ cat.name }}</a></li>
+        {% endfor %}
+    </ul>
 {% endblock %}
