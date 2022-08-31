@@ -3,4 +3,11 @@ from django.contrib import admin
 # Register your models here.
 from .models import *
 
-admin.site.register(Products)
+
+class ProductsAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'price', 'stock', 'time_create', 'slug')
+    list_display_links = ('id', 'title')
+    search_fields = ['title']
+
+
+admin.site.register(Products, ProductsAdmin)

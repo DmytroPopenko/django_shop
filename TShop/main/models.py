@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 # Create your models here.
 
@@ -14,8 +16,16 @@ class Products(models.Model):
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name = "Product list"
+        verbose_name_plural = "Product list"
+        ordering = ["title"]
+
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('product', kwargs={'url_slug': self.slug})
 
 
 class Categories(models.Model):
@@ -23,3 +33,7 @@ class Categories(models.Model):
 
     def __str__(self):
         return self.name
+
+    # Need to create categories route
+    # def get_absolute_url(self):
+    #     return reverse('categories', kwargs={'url_slug': self.slug})

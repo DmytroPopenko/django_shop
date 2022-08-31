@@ -18,10 +18,12 @@
             <div>
               <h4>{{ item.title }}</h4>
               <p>{{ item.description }}</p>
-              <a href="{% url 'product' item.slug %}" class="btn btn-primary">{{ item.price }}</a>
+              <a href="{{ item.get_absolute_url }}" class="btn btn-primary">{{ item.price }}</a>
             </div>
           </div>
         {% endfor %}
     </div>
   </div>
 {% endblock %}
+
+
