@@ -13,8 +13,8 @@ class Products(models.Model):
     slug = models.CharField(max_length=255, default="")
     category = models.ForeignKey('Categories', on_delete=models.PROTECT, null=True)
 
-    time_create = models.DateTimeField(auto_now_add=True)
-    time_update = models.DateTimeField(auto_now=True)
+    time_create = models.DateTimeField(auto_now_add=True, verbose_name="Create time")
+    time_update = models.DateTimeField(auto_now=True, verbose_name="Update time")
 
     class Meta:
         verbose_name = "Product list"
@@ -30,6 +30,11 @@ class Products(models.Model):
 
 class Categories(models.Model):
     name = models.CharField(max_length=255, default="None")
+
+    class Meta:
+        verbose_name = "Category list"
+        verbose_name_plural = "Category list"
+        ordering = ["name"]
 
     def __str__(self):
         return self.name

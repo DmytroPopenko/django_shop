@@ -8,6 +8,7 @@
     <h1>{{ product_obj.title }}</h1>
     <p>{{ product_obj.description }}</p>
     <p>{{ product_obj.category.name }}</p>
+    <p>{{ product_obj.time_update|date:"d-m-Y H-i-s"}}</p>
     <p>
         {% if product_obj.stock %}
             Stock: {{ product_obj.stock }}
