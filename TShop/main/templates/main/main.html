@@ -1,5 +1,5 @@
 {% extends 'main/base.html' %}
-
+{% load main_tags %}
 {% block title %}
     Home
 {% endblock %}
@@ -7,6 +7,7 @@
 
 
 {% block main_content %}
+{% get_products as prod_list %}
     <div class="container px-4 py-5">
     <h2 class="pb-2 border-bottom">Products</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
