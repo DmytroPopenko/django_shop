@@ -30,6 +30,7 @@ class Products(models.Model):
 
 class Categories(models.Model):
     name = models.CharField(max_length=255, default="None")
+    slug = models.CharField(max_length=255, default="")
 
     class Meta:
         verbose_name = "Category list"

@@ -1,0 +1,14 @@
+<!-- Example split danger button -->
+<div class="btn-group">
+  <button type="button" class="btn ">Categories</button>
+  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="visually-hidden">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    {% for cat in categories %}
+    <li><a class="dropdown-item" href="#">{{ cat.name }}</a></li>
+    {% endfor %}
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
