@@ -6,6 +6,5 @@
 /TShop/TShop/__pycache__/
 /TShop/main/__pycache__/
 /TShop/main/migrations/__pycache__/
-
-
-
+/TShop/main/templatetags/__pycache__/
+/TShop/media/
