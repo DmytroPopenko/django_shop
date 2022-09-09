@@ -6,6 +6,9 @@
 
 {% block main_content %}
     <h1>{{ product_obj.title }}</h1>
+    {% if product_obj.image %}
+        <div><img src="{{ product_obj.image.url }}"></div>
+    {% endif %}
     <p>{{ product_obj.description }}</p>
     <p>{{ product_obj.category.name }}</p>
     <p>{{ product_obj.time_update|date:"d-m-Y H-i-s"}}</p>

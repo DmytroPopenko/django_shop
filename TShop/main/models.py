@@ -9,6 +9,7 @@ class Products(models.Model):
     title = models.CharField(max_length=255, default="Unknown")
     price = models.FloatField(default=0.0)
     description = models.TextField(default="Sorry, no description yet.")
+    image = models.ImageField(upload_to="images/%Y/%m/%d/", null=True)
     stock = models.IntegerField(default=0)
     slug = models.CharField(max_length=255, default="")
     category = models.ForeignKey('Categories', on_delete=models.PROTECT, null=True)
