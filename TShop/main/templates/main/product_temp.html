@@ -9,10 +9,10 @@
     <hr>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
         {% if product_obj.image %}
-            <div class="col"><img src="{{ product_obj.image.url }}"></div>
+            <div class="col"><img class="w-100 h-100" src="{{ product_obj.image.url }}"></div>
         {% endif %}
         <div>
-        <p>{{ product_obj.description }}</p>
+        <p>{{ product_obj.description|linebreaks }}</p>
         <p>{{ product_obj.category.name }}</p>
         <p>{{ product_obj.time_update|date:"d-m-Y H-i-s"}}</p>
         <p>
